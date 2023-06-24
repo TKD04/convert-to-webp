@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "update": "ncu -u",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "convert": "gulp",
+    "watch": "gulp watch"
   },
   "keywords": [],
   "author": "",
