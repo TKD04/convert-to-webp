@@ -18,5 +18,6 @@ const convertToWebp = parallel(convertToWebpLossy, convertToWebpLossless);
 const clean = () => deleteAsync("./dist/**");
 
 task("watch", () => watch(["./src/*"], convertToWebp));
+task("clean", clean);
 
 export default series(clean, convertToWebp);
