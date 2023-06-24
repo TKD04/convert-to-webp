@@ -5,7 +5,7 @@ import gulpWebp from "gulp-webp";
 const { dest, parallel, src, series, task, watch } = GulpClient;
 
 const convertToWebpLossy = () =>
-  src("./src/*.jpg").pipe(gulpWebp()).pipe(dest("./dist"));
+  src("./src/*.{jpg,jpeg}").pipe(gulpWebp()).pipe(dest("./dist"));
 const convertToWebpLossless = () =>
   src("./src/*.png")
     .pipe(
