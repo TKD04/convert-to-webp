@@ -2,7 +2,7 @@ import { deleteAsync } from "del";
 import GulpClient from "gulp";
 import gulpWebp from "gulp-webp";
 
-const { dest, parallel, src, series, task, watch } = GulpClient;
+const { dest, parallel, src, series } = GulpClient;
 
 const convertToWebpLossy = () =>
   src("./src/*.{jpg,jpeg}").pipe(gulpWebp()).pipe(dest("./dist"));
@@ -15,9 +15,8 @@ const convertToWebpLossless = () =>
     )
     .pipe(dest("./dist"));
 const convertToWebp = parallel(convertToWebpLossy, convertToWebpLossless);
-const clean = () => deleteAsync("./dist/**");
+export const clean = () => deleteAsync("./dist/**");
 
-task("watch", () => watch(["./src/*"], convertToWebp));
-task("clean", clean);
+export const watch = () => watch(["./src/*"], convertToWebp);
 
 export default series(clean, convertToWebp);
