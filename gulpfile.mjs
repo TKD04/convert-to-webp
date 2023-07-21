@@ -15,8 +15,8 @@ const convertToWebpLossless = () =>
     )
     .pipe(dest("./dist"));
 const convertToWebp = parallel(convertToWebpLossy, convertToWebpLossless);
-export const clean = () => deleteAsync("./dist/**");
 
+export const convert = () => convertToWebp;
 export const watch = () => watch(["./src/*"], convertToWebp);
-
+export const clean = () => deleteAsync("./dist/**");
 export default series(clean, convertToWebp);
