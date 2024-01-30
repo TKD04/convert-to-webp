@@ -2,6 +2,13 @@
 
 A simple Node.js app to convert jpeg/png images into webp images.
 
+| Before | After                    |
+| ------ | ------------------------ |
+| jpeg   | webp lossy q75 (default) |
+| png    | webp lossless            |
+
+You can change the `quality` of webp lossy images by changing `LOSSY_OPSTION` in the `gulpfile.mjs`.
+
 ## Install
 
 **NOTE**: You will need to install [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en) if you don't already have them.
