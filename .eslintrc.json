@@ -1,21 +1,24 @@
 {
-  "extends": [
-    "airbnb-base",
-    "prettier"
-  ],
+  "root": true,
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": "latest"
   },
-  "ignorePatterns": [
-    "/dist/"
-  ],
+  "rules": {
+    "import/extensions": [
+      "error",
+      "always"
+    ]
+  },
   "env": {
     "node": true,
     "es2021": true
   },
-  "root": true,
-  "rules": {
-    "import/no-extraneous-dependencies": "off"
-  }
+  "ignorePatterns": [
+    "/dist/"
+  ],
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ]
 }
