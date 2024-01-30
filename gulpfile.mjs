@@ -5,8 +5,13 @@ import gulpWebp from "gulp-webp";
 const { dest, parallel, src, series } = GulpClient;
 const gulpWatch = GulpClient.watch;
 
+// ref. https://github.com/imagemin/imagemin-webp?tab=readme-ov-file#api
+const LOSSY_OPTION = {
+  quality: 75,
+};
+
 const convertToWebpLossy = () =>
-  src("./src/*.{jpg,jpeg}").pipe(gulpWebp()).pipe(dest("./dist"));
+  src("./src/*.{jpg,jpeg}").pipe(gulpWebp(LOSSY_OPTION)).pipe(dest("./dist"));
 const convertToWebpLossless = () =>
   src("./src/*.png")
     .pipe(
