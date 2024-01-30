@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { deleteAsync } from "del";
 import GulpClient from "gulp";
 import gulpWebp from "gulp-webp";
